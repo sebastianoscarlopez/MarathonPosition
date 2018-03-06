@@ -1,0 +1,6 @@
+C:\desarrollo\git\MarathonPosition\MarathonPosition\bin\Debug\MarathonPosition.exe.config
+C:\desarrollo\git\MarathonPosition\MarathonPosition\obj\Debug\MarathonPosition.csprojResolveAssemblyReference.cache
+C:\desarrollo\git\MarathonPosition\MarathonPosition\bin\Debug\MarathonPosition.exe
+C:\desarrollo\git\MarathonPosition\MarathonPosition\bin\Debug\MarathonPosition.pdb
+C:\desarrollo\git\MarathonPosition\MarathonPosition\obj\Debug\MarathonPosition.exe
+C:\desarrollo\git\MarathonPosition\MarathonPosition\obj\Debug\MarathonPosition.pdb

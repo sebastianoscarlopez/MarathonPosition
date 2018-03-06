@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace MarathonPosition
+{
+    class Program
+    {
+        private static string url = "http://www.clasificacionmaratones.com/results21k/pag/{0}";
+
+        static void Main(string[] args)
+        {
+            try
+            {
+                var regExpPersona = new Regex("sebastian.+lopez");
+                int position = 0, pageIdx = 1;
+                do
+                {
+                    var request = WebRequest.Create(string.Format(url, pageIdx++));
+                    request.Credentials = CredentialCache.DefaultCredentials;
+                    var response = request.GetResponse();
+                    var dataStream = response.GetResponseStream();
+                    var reader = new StreamReader(dataStream);
+                    var responseFromServer = reader.ReadToEnd();
+                    var matches = regExpPersona.Matches(responseFromServer);
+                    if (matches.Count > 0)
+                    {
+                        position = 1;
+                    }
+                    Console.Write("{0}, ", pageIdx);
+                    reader.Close();
+                } while (position == 0);
+                Console.WriteLine("pageIdx{0}, position:{1}", pageIdx, position);
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+    }
+}
